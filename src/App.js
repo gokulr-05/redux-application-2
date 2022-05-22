@@ -8,6 +8,12 @@ function App() {
     return state.cartIsVisible;
   });
 
+  let totCartItems = useSelector((state) => {
+    return state.totalQuantity;
+  });
+
+  console.log("Total Cart Items=", totCartItems);
+
   return (
     <Layout>
       {cartVisibility && <Cart />}

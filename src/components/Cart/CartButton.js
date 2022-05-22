@@ -11,6 +11,12 @@ const CartButton = (props) => {
     dispatchFunc({ type: "toggle" });
   };
 
+  let totCartItems = useSelector((state) => {
+    return state.totalQuantity;
+  });
+
+  // console.log("Total Cart Items=", totCartItems);
+
   return (
     <button
       onClick={(e) => {
@@ -19,7 +25,7 @@ const CartButton = (props) => {
       className={classes.button}
     >
       <span>My Cart</span>
-      <span className={classes.badge}>1</span>
+      <span className={classes.badge}>{totCartItems}</span>
     </button>
   );
 };
