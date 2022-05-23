@@ -44,6 +44,17 @@ let reducerFunc = (state, action) => {
     }
   }
 
+  if (action.type === "AddCartArr") {
+    let cartArr = action.cartArr;
+    let cartTotalQuantity = action.totalQuantity;
+
+    return {
+      cartItems: cartArr,
+      cartIsVisible: state.cartIsVisible,
+      totalQuantity: cartTotalQuantity,
+    };
+  }
+
   if (action.type === "INC") {
     let id = action.id;
 
