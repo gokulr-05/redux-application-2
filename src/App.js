@@ -6,6 +6,9 @@ import { useEffect, useState } from "react";
 
 function App() {
   let dispatch = useDispatch();
+  let isChanged = useSelector((state) => {
+    return state.isChanged;
+  });
 
   let [initial, setInitial] = useState(true);
   let cartVisibility = useSelector((state) => {
@@ -57,6 +60,10 @@ function App() {
         fetchFunc1();
         return;
       }
+
+      // if (!isChanged) {
+      //   return;
+      // }
 
       let response = await fetch(
         "https://redux-application-2-default-rtdb.firebaseio.com/cart.json",

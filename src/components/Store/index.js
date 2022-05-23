@@ -6,6 +6,10 @@ let reducerFunc = (state, action) => {
       cartIsVisible: !state.cartIsVisible,
       cartItems: state.cartItems,
       totalQuantity: state.totalQuantity,
+      status: state.status,
+      title: state.title,
+      message: state.message,
+      isChanged: state.isChanged,
     };
   }
 
@@ -25,6 +29,10 @@ let reducerFunc = (state, action) => {
         cartItems: cartItemArr,
         cartIsVisible: state.cartIsVisible,
         totalQuantity: state.totalQuantity + 1,
+        status: "success",
+        title: "Added",
+        message: "Item Added....",
+        isChanged: true,
       };
     } else {
       let cartItemArr = [...state.cartItems];
@@ -40,6 +48,10 @@ let reducerFunc = (state, action) => {
         cartItems: cartItemArr,
         cartIsVisible: state.cartIsVisible,
         totalQuantity: state.totalQuantity + 1,
+        status: "success",
+        title: "Added",
+        message: "Item Added....",
+        isChanged: true,
       };
     }
   }
@@ -52,6 +64,10 @@ let reducerFunc = (state, action) => {
       cartItems: cartArr,
       cartIsVisible: state.cartIsVisible,
       totalQuantity: cartTotalQuantity,
+      status: "",
+      title: "",
+      message: "",
+      isChanged: false,
     };
   }
 
@@ -70,6 +86,10 @@ let reducerFunc = (state, action) => {
       cartItems: cartItemArr,
       cartIsVisible: state.cartIsVisible,
       totalQuantity: state.totalQuantity + 1,
+      status: "success",
+      title: "Added",
+      message: "Item Added....",
+      isChanged: true,
     };
   }
 
@@ -89,6 +109,10 @@ let reducerFunc = (state, action) => {
         cartItems: cartItemArr,
         cartIsVisible: state.cartIsVisible,
         totalQuantity: state.totalQuantity - 1,
+        status: "success",
+        title: "Removed",
+        message: "Item Removed....",
+        isChanged: true,
       };
     }
 
@@ -99,6 +123,10 @@ let reducerFunc = (state, action) => {
       cartItems: cartItemArr,
       cartIsVisible: state.cartIsVisible,
       totalQuantity: state.totalQuantity - 1,
+      status: "success",
+      title: "Removed",
+      message: "Item Removed....",
+      isChanged: true,
     };
   }
 
@@ -109,6 +137,10 @@ let store = createStore(reducerFunc, {
   cartIsVisible: true,
   cartItems: [],
   totalQuantity: 0,
+  status: "",
+  title: "",
+  message: "",
+  isChanged: false,
 });
 
 export default store;

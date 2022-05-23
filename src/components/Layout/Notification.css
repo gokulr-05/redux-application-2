@@ -1,0 +1,9 @@
+.Added {
+  background-color: rgba(0, 255, 0, 0.756);
+  color: white;
+}
+
+.Removed {
+  background-color: rgba(255, 17, 0, 0.911);
+  color: white;
+}
